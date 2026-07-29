@@ -32,7 +32,7 @@
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.23.1",
-    "typescript": "^5.7.0"
+    "typescript": "^7.0.2"
   },
   "engines": {
     "node": ">=20.9.0"
