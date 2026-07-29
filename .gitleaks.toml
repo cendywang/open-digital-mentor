@@ -1,0 +1,28 @@
+title = "Open Digital Mentor secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-llm-key"
+description = "OpenAI-compatible / DashScope / DeepSeek style API key"
+regex = '''sk-[A-Za-z0-9_\-]{20,}'''
+tags = ["key", "llm"]
+
+[[rules]]
+id = "volcengine-ark-key"
+description = "Volcengine Ark style UUID credential"
+regex = '''\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b'''
+tags = ["key"]
+[rules.allowlist]
+# UUIDs appear legitimately in lockfiles and generated ids.
+paths = ['''package-lock\.json''', '''uv\.lock''']
+
+[allowlist]
+description = "Ignored dependency and build trees"
+paths = [
+  '''(^|/)refer/''',
+  '''(^|/)node_modules/''',
+  '''(^|/)\.next(?:-dev)?/''',
+  '''(^|/)\.venv/''',
+]

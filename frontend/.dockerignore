@@ -1,0 +1,5 @@
+.next
+.next-dev
+node_modules
+*.log
+npm-debug.log*

@@ -1,0 +1,52 @@
+# ---- secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+
+# ---- node ----
+node_modules/
+.next/
+.next-dev/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- runtime artifacts ----
+logs/
+*.log
+tmp/
+.cache/
+
+# ---- os / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.claude/settings.local.json
+.agents/
+.codex/
+
+# ---- reference material (NOT part of this project) ----
+# refer/ contains third-party code under audit. It must never be committed.
+refer/

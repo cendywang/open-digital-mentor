@@ -1,0 +1,17 @@
+.git
+.github
+.agents
+.claude
+.codex
+.env
+.env.*
+.venv
+docs
+frontend
+refer
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/node_modules
+**/.next
+*.log

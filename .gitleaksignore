@@ -1,0 +1,3 @@
+# M0.1 test fixture used this unmistakably fake value to prove Mock mode
+# never contacts a configured live provider. The fixture was renamed in M0.4.
+8925d52dddb20acf865d2b5022293d56f686edfa:backend/tests/test_mock_offline.py:generic-llm-key:131
