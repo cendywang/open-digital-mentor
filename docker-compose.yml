@@ -1,0 +1,27 @@
+# Mock 模式下无需任何 API Key：docker compose up
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      ODM_HOST: 0.0.0.0          # inside the container only; not published wide
+      ODM_ALLOWED_ORIGINS: "http://localhost:${ODM_DOCKER_FRONTEND_PORT:-3000},http://127.0.0.1:${ODM_DOCKER_FRONTEND_PORT:-3000}"
+    volumes:
+      - ./knowledge:/app/knowledge:ro
+    ports:
+      - "127.0.0.1:${ODM_DOCKER_BACKEND_PORT:-8000}:8000"    # host loopback only
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_ODM_WS_URL: ws://127.0.0.1:${ODM_DOCKER_BACKEND_PORT:-8000}/ws
+        NEXT_PUBLIC_ODM_AVATAR_URL: ${NEXT_PUBLIC_ODM_AVATAR_URL:-/avatars/default.vrm}
+        NEXT_PUBLIC_ODM_RENDER_PRESET: ${NEXT_PUBLIC_ODM_RENDER_PRESET:-stylized}
+    ports:
+      - "127.0.0.1:${ODM_DOCKER_FRONTEND_PORT:-3000}:3000"
+    depends_on: [backend]

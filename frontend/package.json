@@ -1,0 +1,46 @@
+{
+  "name": "open-digital-mentor-web",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --import tsx --test src/transport/AudioQueue.test.ts scripts/public-env.test.mjs",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "verify:vrm": "node scripts/verify-vrm.mjs public/avatars/default.vrm"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.5.5",
+    "@pixiv/three-vrm-animation": "^3.5.5",
+    "next": "^16.2.12",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.185.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.185.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^16.2.12",
+    "postcss": "^8.5.23",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.1",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.23",
+      "sharp": "0.35.3"
+    }
+  }
+}

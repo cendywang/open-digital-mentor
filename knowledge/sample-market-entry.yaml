@@ -1,0 +1,527 @@
+# ⚠️ 合成示例数据 —— 虚构内容，不对应任何真实国家或政策，不构成任何建议。
+# 用途：演示检索、引用溯源与拒答链路。真实语料请替换本文件。
+
+- id: entity-freezone-vs-mainland
+  topic: 示例国别 / 主体设立
+  type: decision_framework
+  title: 自贸区主体与关境内主体的选择维度
+  content: |
+    这是设立环节的第一个分叉，选错之后改的成本很高。
+    自贸区主体通常在外资持股、利润汇出和设立速度上更宽松，适合区域总部、
+    贸易中转和面向境外客户的业务。关境内主体在承接本地政府与国企合同、
+    开展本地零售和获取部分行业牌照上不可替代。
+    多数企业最终是两者并存：自贸区持股，关境内经营。
+  dimensions:
+    - 业务是否需要直接面向本地终端客户收款
+    - 是否需要承接本地政府或国企合同
+    - 对外资持股比例是否有硬性要求
+    - 利润汇出频率与外汇管制的容忍度
+    - 是否需要为本地雇员办理工作签证
+  redlines:
+    - 自贸区主体通常不得直接在关境内开展经营活动，需通过本地分销商或另设主体
+    - 以自贸区主体签署关境内政府合同，在多数情形下会被认定为无效
+  keywords: [自贸区, 关境内, 主体, 设立, 持股, 分公司, freezone, mainland, entity]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: entity-tax-registration-window
+  topic: 示例国别 / 税务
+  type: checklist
+  title: 主体设立后的税务登记时限清单
+  content: |
+    设立完成不等于可以开展业务。以下事项通常有明确的时限，逾期会产生定额罚款，
+    并连带影响银行开户与资质申请。
+    1. 取得营业执照后完成税务登记
+    2. 完成增值税或等价流转税的登记（若营业额达到门槛）
+    3. 完成社保与雇员登记（若已雇佣本地员工）
+    4. 指定税务代表或本地会计（部分行业强制）
+  redlines:
+    - 逾期登记的罚款通常不可通过事后补登豁免
+    - 未完成税务登记前开具发票，可能被认定为虚开
+  keywords: [税务, 登记, 时限, 罚款, 增值税, 社保, tax, registration, vat]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: banking-account-opening-blockers
+  topic: 示例国别 / 银行
+  type: fact
+  title: 企业银行开户的常见卡点
+  content: |
+    开户被拒很少是因为材料不全，更多是因为银行没有被说服"这家公司真的在本地经营"。
+    审核重点通常是三件事：实际控制人背景、资金来源说明、本地经营实质。
+    其中经营实质最容易被低估——没有本地办公场地租约、没有本地雇员、
+    没有本地客户合同的公司，通常会被要求反复补件，或在几周后被直接拒绝。
+    建议在设立阶段就同步准备租约与至少一名本地雇员，而不是等开户被拒再补。
+  keywords: [银行, 开户, 账户, 实质, 尽调, 实际控制人, bank, account, kyc]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: labor-localization-quota
+  topic: 示例国别 / 用工
+  type: redline
+  title: 本地化用工比例的硬性要求
+  content: |
+    部分行业对本地籍员工比例有强制下限，达不到会影响工作签证配额的发放，
+    进而卡住整个团队的落地节奏。这个约束通常不会在设立阶段被提示，
+    而是在申请第 5 到第 10 个工作签证时才突然出现。
+    建议在做人员规划时，就把本地雇员比例作为一个硬约束而非优化项。
+  redlines:
+    - 本地化比例不达标时，新增工作签证申请通常直接被驳回，且无申诉通道
+    - 以劳务外包规避比例要求，在多数情形下会被穿透认定
+  keywords: [用工, 本地化, 比例, 配额, 工作签证, 劳务, labor, quota, visa]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: entity-branch-vs-subsidiary
+  topic: 示例国别 / 主体设立
+  type: decision_framework
+  title: 分公司与子公司的选择维度
+  content: |
+    分公司通常设立更快、集团控制直接，但总公司需要对当地经营责任承担最终风险。
+    子公司责任边界更清楚，也更容易引入本地股东或未来出售，但治理和申报成本更高。
+    选择时应先确定风险隔离与未来融资需求，再比较设立速度。
+  dimensions:
+    - 是否需要把当地经营责任与集团其他资产隔离
+    - 未来是否计划引入投资人或单独出售当地业务
+    - 总公司能否持续提供审计文件与授权文件
+    - 客户招标是否要求当地独立法人
+  redlines:
+    - 高责任行业不应只为节省设立成本而忽略风险隔离
+  keywords: [分公司, 子公司, 法人, 风险隔离, 融资, branch, subsidiary]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: entity-license-activity-match
+  topic: 示例国别 / 主体设立
+  type: checklist
+  title: 经营活动与牌照范围核对清单
+  content: |
+    营业执照上的活动描述决定公司能签什么合同、开什么发票和申请哪些人员资质。
+    核对时应把收入来源逐项映射到许可活动，并确认线上销售、安装、售后和咨询是否需要附加许可。
+  redlines:
+    - 合同与发票描述长期超出许可活动范围会触发续牌或税务审查
+    - 不得借用关联公司的牌照为本主体开票
+  keywords: [牌照, 经营范围, 活动, 发票, 续牌, license, activity]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: entity-ownership-control
+  topic: 示例国别 / 主体设立
+  type: decision_framework
+  title: 股权比例与实际控制安排
+  content: |
+    名义持股比例只是控制安排的一部分。董事任免、保留事项、银行签字权和利润分配条款
+    共同决定谁能控制日常经营。需要把公司章程、股东协议与银行授权放在一起审阅。
+  dimensions:
+    - 哪些事项需要一致同意或特别多数
+    - 谁能任免总经理与财务负责人
+    - 单笔付款与合同的签字权限如何分级
+    - 发生僵局时是否有可执行的退出机制
+  redlines:
+    - 不应使用与登记文件冲突的秘密代持安排
+  keywords: [股权, 控制, 董事, 签字权, 股东协议, ownership, control]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: tax-vat-threshold-monitoring
+  topic: 示例国别 / 税务
+  type: checklist
+  title: 流转税登记门槛监控
+  content: |
+    企业不能等年度审计时才检查流转税登记义务。应按月汇总应税收入、跨境服务和关联交易，
+    同时记录接近门槛的日期，以便在触发后的申请窗口内完成登记。
+  redlines:
+    - 达到强制登记门槛后继续按未登记主体开票会累积处罚风险
+  keywords: [流转税, 增值税, 门槛, 营业额, 登记, vat, threshold]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: tax-corporate-filing-calendar
+  topic: 示例国别 / 税务
+  type: checklist
+  title: 企业所得税申报日历
+  content: |
+    税务日历至少要覆盖会计年度截止日、预缴节点、年度申报、税款支付和审计报告交付。
+    每个节点都应指定资料负责人、复核人和最晚内部交付日，避免把法定截止日当成内部启动日。
+  redlines:
+    - 即使当期亏损或零收入，也不能默认免于提交申报
+  keywords: [企业所得税, 申报, 日历, 预缴, 审计, corporate tax, filing]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: tax-transfer-pricing-related-party
+  topic: 示例国别 / 税务
+  type: redline
+  title: 关联交易与转让定价留痕
+  content: |
+    总部管理费、品牌费、集团借款和跨境采购都属于需要留痕的关联交易。
+    企业应保存定价方法、可比依据、合同、交付证据与付款路径，不能只在申报前补一份说明。
+  redlines:
+    - 没有真实服务交付证据的管理费不得仅凭集团内部发票税前扣除
+    - 关联借款利率不得脱离可解释的市场区间
+  keywords: [关联交易, 转让定价, 管理费, 集团借款, transfer pricing, related party]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: banking-account-opening-pack
+  topic: 示例国别 / 银行
+  type: checklist
+  title: 企业开户材料包
+  content: |
+    开户材料包应同时解释公司是谁、为什么在当地经营、钱从哪里来以及预计如何流动。
+    基础文件包括登记证照、章程、控制人身份证明、地址证明、集团结构、合同样本、资金来源和交易预测。
+  redlines:
+    - 控制人、业务描述和预计交易对手在不同材料中必须保持一致
+  keywords: [开户材料, 控制人, 地址证明, 资金来源, 交易预测, kyc, documents]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: banking-source-of-funds
+  topic: 示例国别 / 银行
+  type: decision_framework
+  title: 资金来源说明的证据链
+  content: |
+    银行关注的不只是付款人名称，而是资金如何从经营或投资活动形成并流入新公司。
+    证据链应从原始收入、分红或融资文件，一直连接到汇款账户和最终用途。
+  dimensions:
+    - 资金来自经营收入、股东注资还是集团借款
+    - 原始资金形成文件是否可核验
+    - 汇款路径是否经过无关第三方
+    - 金额与新公司的预算用途是否匹配
+  redlines:
+    - 不应使用无法说明关系的个人或第三方账户代为注资
+  keywords: [资金来源, 注资, 汇款路径, 股东借款, source of funds, banking]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: payments-fx-settlement
+  topic: 示例国别 / 银行
+  type: decision_framework
+  title: 跨境收款与外汇结算路径
+  content: |
+    跨境收款方案需要同时考虑合同主体、发票币种、银行可接受的贸易背景和资金回流需求。
+    只比较汇率通常会忽略合规审核、到账稳定性和对账成本。
+  dimensions:
+    - 客户付款币种与公司成本币种是否匹配
+    - 银行需要哪些合同、发票或物流文件
+    - 是否存在定期向总部汇回利润的需求
+    - 支付服务商是否支持企业所在地与业务类型
+  redlines:
+    - 不得把持续经营收入伪装成股东往来规避贸易背景审核
+  keywords: [跨境收款, 外汇, 结算, 币种, 汇回, fx, payment]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: labor-visa-sequencing
+  topic: 示例国别 / 用工
+  type: checklist
+  title: 首批员工签证办理顺序
+  content: |
+    首批员工落地通常依赖公司登记、办公地址、雇主账户、职位配额和体检等前置条件。
+    项目计划应倒排每个依赖，并为关键员工准备远程办公或短期商务访问的合规替代方案。
+  redlines:
+    - 商务访问身份不得替代需要工作许可的持续受雇活动
+  keywords: [工作签证, 员工, 配额, 体检, 雇主账户, visa, onboarding]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: labor-employment-contract
+  topic: 示例国别 / 用工
+  type: checklist
+  title: 本地劳动合同必备条款
+  content: |
+    劳动合同应明确岗位、工作地点、工资构成、工时、试用期、休假、保密和终止条件。
+    总部模板中的竞业限制、知识产权和奖金条款需要按当地可执行性调整。
+  redlines:
+    - 合同工资不得低于签证或工资保护系统中申报的金额
+    - 不得用内部手册单方面降低法定最低权益
+  keywords: [劳动合同, 工资, 试用期, 休假, 竞业, employment contract]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: labor-termination-process
+  topic: 示例国别 / 用工
+  type: redline
+  title: 员工终止与离职流程
+  content: |
+    终止决定需要与通知期、未休假折现、奖金规则、签证注销和公司财产归还一起处理。
+    绩效原因终止还需要连续、可核验的反馈与改进记录。
+  redlines:
+    - 不得在受保护假期或缺少法定程序时立即解除劳动关系
+    - 不得以扣留护照或工资迫使员工签署离职文件
+  keywords: [解雇, 终止, 离职, 通知期, 补偿, termination, offboarding]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: data-residency-assessment
+  topic: 示例国别 / 数据合规
+  type: decision_framework
+  title: 业务数据跨境与本地存储评估
+  content: |
+    数据架构评估应先识别数据主体、敏感程度、处理目的和接收方，再决定是否能跨境。
+    本地存储要求可能只覆盖特定行业或特定数据，并不等于所有系统都必须本地部署。
+  dimensions:
+    - 数据是否包含身份、健康、支付或政府相关信息
+    - 数据主体与处理活动发生在哪个地区
+    - 境外接收方承担什么角色与安全义务
+    - 是否存在行业监管或客户合同的额外限制
+  redlines:
+    - 未完成合法性评估前不得把敏感数据批量复制到总部测试环境
+  keywords: [数据跨境, 本地存储, 敏感数据, 隐私, data residency, privacy]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: security-incident-response
+  topic: 示例国别 / 数据合规
+  type: checklist
+  title: 数据安全事件响应清单
+  content: |
+    发现泄露后应立即保全日志、限制继续暴露、判断受影响数据与人员，并启动通知时限评估。
+    对外沟通前要统一事实版本，但不能因等待完整根因而错过强制通知窗口。
+  redlines:
+    - 不得删除或改写可能用于调查的原始日志
+    - 不得在未评估法定义务前承诺不通知监管或客户
+  keywords: [数据泄露, 安全事件, 通知, 日志, incident, breach]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: product-registration-path
+  topic: 示例国别 / 产品准入
+  type: decision_framework
+  title: 产品注册与上市路径选择
+  content: |
+    产品上市前应先判断属于普通商品、受监管产品还是需要本地责任人的类别。
+    同一产品因用途声明、销售渠道和目标客户不同，可能落入不同注册路径。
+  dimensions:
+    - 产品用途声明是否涉及健康、安全或专业性能
+    - 是否需要检测报告、认证或当地代表
+    - 注册主体应由制造商、进口商还是经销商担任
+    - 包装标签和说明书是否需要本地语言
+  redlines:
+    - 未取得所需注册或认证前不得以试销名义公开销售
+  keywords: [产品注册, 认证, 上市, 标签, 当地代表, product registration]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: trade-customs-classification
+  topic: 示例国别 / 贸易与海关
+  type: checklist
+  title: 海关归类与完税价格核对
+  content: |
+    报关前应根据产品材料、功能和用途确认商品编码，并保存支持归类的技术资料。
+    完税价格需要解释折扣、模具费、授权费与关联交易调整，不能只照搬商业发票金额。
+  redlines:
+    - 不得为降低税率而使用与产品实际功能不符的商品编码
+  keywords: [海关, 商品编码, 归类, 完税价格, 关税, customs, hs code]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: trade-importer-of-record
+  topic: 示例国别 / 贸易与海关
+  type: decision_framework
+  title: 进口责任主体选择
+  content: |
+    进口责任主体承担申报、税费、产品合规和召回配合责任。由自有公司、经销商或第三方服务商担任，
+    会直接影响库存控制、客户数据和违规风险的归属。
+  dimensions:
+    - 谁拥有进口许可与必要产品资质
+    - 谁承担税费垫付、查验与滞港成本
+    - 谁控制库存、客户信息与退运决策
+    - 合作终止后历史进口记录能否取得
+  redlines:
+    - 不应在合同未明确责任时借用陌生第三方名义进口
+  keywords: [进口商, 报关, 进口责任, 经销商, importer of record, customs]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: channel-distributor-selection
+  topic: 示例国别 / 渠道
+  type: decision_framework
+  title: 本地经销商筛选维度
+  content: |
+    经销商筛选不能只看承诺销量。覆盖客户、售后能力、合规记录、库存投入和数据透明度
+    决定合作能否持续。试运行期应设置可核验里程碑，而不是直接给予长期独家权。
+  dimensions:
+    - 目标客户覆盖是否有可验证的历史交易
+    - 是否具备产品注册、进口与售后能力
+    - 库存、回款和市场投入由谁承担
+    - 能否按期共享终端销售与客户反馈
+  redlines:
+    - 未完成尽调与试运行前不得授予无条件长期独家权
+  keywords: [经销商, 渠道, 独家, 销量, 售后, distributor, channel]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: sales-government-tender
+  topic: 示例国别 / 渠道
+  type: checklist
+  title: 政府与国企投标准入清单
+  content: |
+    投标前应核对供应商注册、当地实体年限、税务证明、业绩门槛、保证金和本地化评分。
+    商务团队还要确认实际签约主体与提交资质的主体一致。
+  redlines:
+    - 不得借用其他公司的业绩或供应商账号提交投标
+    - 不得向中间人支付无法对应真实服务的成功费
+  keywords: [政府投标, 国企, 供应商注册, 保证金, tender, procurement]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: operations-office-lease
+  topic: 示例国别 / 运营
+  type: decision_framework
+  title: 办公地址与租赁方案选择
+  content: |
+    虚拟地址、共享办公室和独立办公室对牌照、银行、签证配额和客户尽调的支持程度不同。
+    选择地址时应把首年成本与后续补租、搬迁和变更登记成本一起比较。
+  dimensions:
+    - 牌照是否接受该地址类型
+    - 银行和重点客户是否要求独立经营场所
+    - 地址能支持多少工作签证或员工登记
+    - 扩租、退租和登记变更的成本
+  redlines:
+    - 不得提交无法实际使用或无法配合现场核查的地址
+  keywords: [办公室, 租赁, 虚拟地址, 共享办公室, 签证配额, office, lease]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: operations-insurance-baseline
+  topic: 示例国别 / 运营
+  type: checklist
+  title: 落地运营保险基线
+  content: |
+    基础保险评估应覆盖雇主责任、公众责任、财产、专业责任、网络安全和产品责任。
+    保额应结合合同赔偿上限、客户要求和最坏单次事故测算，而不是沿用总部固定模板。
+  redlines:
+    - 合同要求的保险证明必须在服务开始前有效
+  keywords: [保险, 雇主责任, 公众责任, 网络安全, 产品责任, insurance]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: ip-trademark-registration
+  topic: 示例国别 / 知识产权
+  type: checklist
+  title: 品牌进入前的商标保护
+  content: |
+    品牌公开前应检索文字、图形和本地语言音译，并按实际商品与服务类别提交申请。
+    同时登记经销商、代理商和域名注册人，避免合作方先行占有核心标识。
+  redlines:
+    - 不得把核心商标长期登记在经销商或个人员工名下
+  keywords: [商标, 品牌, 音译, 类别, 经销商, trademark, ip]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: launch-first-ninety-days
+  topic: 示例国别 / 落地计划
+  type: decision_framework
+  title: 落地前九十天任务排序
+  content: |
+    前九十天应围绕关键依赖排序，而不是让设立、开户、招聘和销售四条线各自推进。
+    先锁定签约与收款主体，再倒排牌照、地址、银行、人员和产品准入的最晚完成点。
+  dimensions:
+    - 第一笔合同何时签署、由谁签署
+    - 第一笔款项何时收取、进入哪个账户
+    - 哪些关键员工必须到场才能推进业务
+    - 产品或服务开始交付前有哪些强制许可
+  redlines:
+    - 不得以销售目标为由跳过产品准入、用工或税务前置条件
+  keywords: [九十天, 落地计划, 任务排序, 关键路径, launch, roadmap]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true
+
+- id: exit-closure-checklist
+  topic: 示例国别 / 退出
+  type: checklist
+  title: 主体停业与注销清单
+  content: |
+    停止经营后仍需处理员工、客户合同、库存、税务清算、银行账户、牌照和数据留存。
+    注销顺序应避免先关闭账户后无法支付税款，也要保留能接收监管通知的联系人。
+  redlines:
+    - 未结清员工权益、税款和债权人事项前不得分配剩余资产
+    - 不得在法定保存期届满前销毁会计与交易记录
+  keywords: [注销, 停业, 清算, 银行账户, 数据留存, closure, liquidation]
+  source:
+    title: 合成示例数据（非真实政策）
+    retrieved_at: 2026-07-26
+    license: 本项目自撰，Apache-2.0
+    is_sample_data: true

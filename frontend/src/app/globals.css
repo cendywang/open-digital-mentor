@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink text-slate-200 antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+/* CSS-only stage background; no external image asset is required. */
+.stage-backdrop {
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(59, 130, 246, 0.14) 0%, transparent 60%),
+    linear-gradient(180deg, #10161f 0%, #0d1117 55%, #090c11 100%);
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ink-line;
+}
