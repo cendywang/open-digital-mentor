@@ -26,7 +26,7 @@
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.185.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.17.0",
+    "eslint": "^10.8.0",
     "eslint-config-next": "^16.2.12",
     "postcss": "^8.5.23",
     "sharp": "^0.35.3",
